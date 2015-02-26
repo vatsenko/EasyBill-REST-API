@@ -5,7 +5,7 @@
     <CreatedBy>i.vatsenko@yahoo.com</CreatedBy>
     <Description></Description>
     <DisplayName>soapeasybill</DisplayName>
-    <LastModifiedAt>1424936645200</LastModifiedAt>
+    <LastModifiedAt>1424951158401</LastModifiedAt>
     <LastModifiedBy>i.vatsenko@yahoo.com</LastModifiedBy>
     <Policies>
         <Policy>Remove-Apikey</Policy>
@@ -37,6 +37,7 @@
         <Policy>getDocumentPDF-build-soap</Policy>
         <Policy>getDocumentPayments-build-soap</Policy>
         <Policy>getDocumentSent-build-soap</Policy>
+        <Policy>getDocuments-Build-SOAP-pure</Policy>
         <Policy>getDocuments-build-soap</Policy>
         <Policy>getDocuments-extract-query-param</Policy>
         <Policy>restore-message</Policy>

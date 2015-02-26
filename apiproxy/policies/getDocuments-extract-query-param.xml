@@ -7,5 +7,14 @@
     <QueryParam name="Canceled">
         <Pattern ignoreCase="true">{Canceled}</Pattern>
     </QueryParam>
+  	<QueryParam name="LimitType">
+        <Pattern ignoreCase="true">{LimitType}</Pattern>
+    </QueryParam>
+  	<QueryParam name="LimitPeriod">
+        <Pattern ignoreCase="true">{from}:{until}</Pattern>
+    </QueryParam>
+  	<QueryParam name="DocumentType">
+        <Pattern ignoreCase="true">{DocumentType}</Pattern>
+    </QueryParam>
     <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
 </ExtractVariables>

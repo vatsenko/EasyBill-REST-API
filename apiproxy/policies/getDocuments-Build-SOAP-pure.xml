@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<AssignMessage async="false" continueOnError="true" enabled="true" name="getDocuments-build-soap">
-    <DisplayName>getDocuments Build SOAP</DisplayName>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="getDocuments-Build-SOAP-pure">
+    <DisplayName>getDocuments Build SOAP (pure)</DisplayName>
     <Add>
         <Headers>
             <Header name="SOAPAction">http://www.easybill.de/webservice/documents/getDocuments</Header>
@@ -28,9 +28,6 @@
                         <StatusType>{StatusType}</StatusType>
                         <!--Optional-->
                         <Canceled>{Canceled}</Canceled>
-                      	<!--Optional-->
-                      	<LimitType>{LimitType}</LimitType>
-                      	<LimitPeriod from= "{from}" until = "{until}"></LimitPeriod>
                     </document:GetDocumentsRequest>
                 </soap:Body>
             </soap:Envelope>

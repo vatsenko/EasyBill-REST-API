@@ -249,6 +249,14 @@
                 </Step>
                 <Step>
                     <Name>getDocuments-build-soap</Name>
+                    <Condition>(LimitType is &quot;DATE&quot;)
+                  			OR (LimitType is &quot;CREATED&quot;)
+                  			OR (LimitType is &quot;MODIFIED&quot;)</Condition>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>getDocuments-Build-SOAP-pure</Name>
+                    <Condition>(LimitType is null)</Condition>
                 </Step>
             </Request>
             <Response/>
@@ -275,7 +283,7 @@
                 </Step>
             </Request>
             <Response/>
-            <Condition>(proxy.pathsuffix MatchesPath &quot;&#x2F;document&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;/document/{id}&quot;) and (request.verb = &quot;GET&quot;)</Condition>
         </Flow>
         <Flow name="getDocumentPDF">
             <Description>getDocumentPDF</Description>
