@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="true" enabled="true" name="addDocumentPayment-build-soap">
+    <DisplayName>addDocumentPayment Build SOAP</DisplayName>
+    <Add>
+        <Headers>
+            <Header name="SOAPAction">http://www.easybill.de/webservice/payments/addDocumentPayment</Header>
+        </Headers>
+    </Add>
+    <Set>
+        <Headers>
+            <Header name="Content-Type">text/xml; charset=utf-8</Header>
+        </Headers>
+        <Payload contentType="text/xml">
+            <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <soap:Body>
+                    <AddDocumentPaymentRequest xmlns="http://www.easybill.de/webservice/" xmlns:AddDocumentPaymentRequest="http://www.easybill.de/webservice/">
+                        <!--Required-->
+                        <amount>{amount}</amount>
+                        <!--Required-->
+                        <paymentdate>{paymentdate}</paymentdate>
+                        <!--Required-->
+                        <paymenttype>{paymenttype}</paymenttype>
+                        <!--Optional-->
+                        <notice>{notice}</notice>
+                        <!--Optional-->
+                        <payed>{payed}</payed>
+                    </AddDocumentPaymentRequest>
+                </soap:Body>
+            </soap:Envelope>
+        </Payload>
+        <Verb>POST</Verb>
+    </Set>
+    <AssignVariable>
+        <Name>forward.target.url</Name>
+        <Value>https://soap2.easybill.de/webservices/webservice4/soap.easybill.php</Value>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

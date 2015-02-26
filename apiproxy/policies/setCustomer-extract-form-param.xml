@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="true" enabled="true" name="setCustomer-extract-form-param">
+    <DisplayName>setCustomer Extract Form Param</DisplayName>
+  	<URIPath>
+          <Pattern>/customer/{id}</Pattern>
+    </URIPath>
+    <FormParam name="customerNumber">
+        <Pattern ignoreCase="true">{customerNumber}</Pattern>
+    </FormParam>
+    <FormParam name="salutation">
+        <Pattern ignoreCase="true">{salutation}</Pattern>
+    </FormParam>
+    <FormParam name="personal">
+        <Pattern ignoreCase="true">{personal}</Pattern>
+    </FormParam>
+    <FormParam name="title">
+        <Pattern ignoreCase="true">{title}</Pattern>
+    </FormParam>
+    <FormParam name="firstName">
+        <Pattern ignoreCase="true">{firstName}</Pattern>
+    </FormParam>
+    <FormParam name="lastName">
+        <Pattern ignoreCase="true">{lastName}</Pattern>
+    </FormParam>
+    <FormParam name="suffix_1">
+        <Pattern ignoreCase="true">{suffix_1}</Pattern>
+    </FormParam>
+    <FormParam name="suffix_2">
+        <Pattern ignoreCase="true">{suffix_2}</Pattern>
+    </FormParam>
+    <FormParam name="companyName">
+        <Pattern ignoreCase="true">{companyName}</Pattern>
+    </FormParam>
+    <FormParam name="street">
+        <Pattern ignoreCase="true">{street}</Pattern>
+    </FormParam>
+    <FormParam name="zipCode">
+        <Pattern ignoreCase="true">{zipCode}</Pattern>
+    </FormParam>
+    <FormParam name="city">
+        <Pattern ignoreCase="true">{city}</Pattern>
+    </FormParam>
+    <FormParam name="country">
+        <Pattern ignoreCase="true">{country}</Pattern>
+    </FormParam>
+    <FormParam name="postbox">
+        <Pattern ignoreCase="true">{postbox}</Pattern>
+    </FormParam>
+    <FormParam name="postboxZipCode">
+        <Pattern ignoreCase="true">{postboxZipCode}</Pattern>
+    </FormParam>
+    <FormParam name="postboxCity">
+        <Pattern ignoreCase="true">{postboxCity}</Pattern>
+    </FormParam>
+    <FormParam name="postboxCountry">
+        <Pattern ignoreCase="true">{postboxCountry}</Pattern>
+    </FormParam>
+    <FormParam name="phone_1">
+        <Pattern ignoreCase="true">{phone_1}</Pattern>
+    </FormParam>
+    <FormParam name="phone_2">
+        <Pattern ignoreCase="true">{phone_2}</Pattern>
+    </FormParam>
+    <FormParam name="fax">
+        <Pattern ignoreCase="true">{fax}</Pattern>
+    </FormParam>
+    <FormParam name="mobile">
+        <Pattern ignoreCase="true">{mobile}</Pattern>
+    </FormParam>
+    <FormParam name="email">
+        <Pattern ignoreCase="true">{email}</Pattern>
+    </FormParam>
+    <FormParam name="internet">
+        <Pattern ignoreCase="true">{internet}</Pattern>
+    </FormParam>
+    <FormParam name="info_1">
+        <Pattern ignoreCase="true">{info_1}</Pattern>
+    </FormParam>
+    <FormParam name="info_2">
+        <Pattern ignoreCase="true">{info_2}</Pattern>
+    </FormParam>
+    <FormParam name="note">
+        <Pattern ignoreCase="true">{note}</Pattern>
+    </FormParam>
+    <FormParam name="taxNumber">
+        <Pattern ignoreCase="true">{taxNumber}</Pattern>
+    </FormParam>
+    <FormParam name="ustid">
+        <Pattern ignoreCase="true">{ustid}</Pattern>
+    </FormParam>
+    <FormParam name="taxOptions">
+        <Pattern ignoreCase="true">{taxOptions}</Pattern>
+    </FormParam>
+    <FormParam name="cashAllowance">
+        <Pattern ignoreCase="true">{cashAllowance}</Pattern>
+    </FormParam>
+    <FormParam name="cashDiscount">
+        <Pattern ignoreCase="true">{cashDiscount}</Pattern>
+    </FormParam>
+    <FormParam name="cashDiscountType">
+        <Pattern ignoreCase="true">{cashDiscountType}</Pattern>
+    </FormParam>
+    <FormParam name="salePriceLevel">
+        <Pattern ignoreCase="true">{salePriceLevel}</Pattern>
+    </FormParam>
+    <FormParam name="bankAccountOwner_1">
+        <Pattern ignoreCase="true">{bankAccountOwner_1}</Pattern>
+    </FormParam>
+    <FormParam name="bankName_1">
+        <Pattern ignoreCase="true">{bankName_1}</Pattern>
+    </FormParam>
+    <FormParam name="bankCode_1">
+        <Pattern ignoreCase="true">{bankCode_1}</Pattern>
+    </FormParam>
+    <FormParam name="bankAccount_1">
+        <Pattern ignoreCase="true">{bankAccount_1}</Pattern>
+    </FormParam>
+    <FormParam name="bankBIC_1">
+        <Pattern ignoreCase="true">{bankBIC_1}</Pattern>
+    </FormParam>
+    <FormParam name="bankIBAN_1">
+        <Pattern ignoreCase="true">{bankIBAN_1}</Pattern>
+    </FormParam>
+    <FormParam name="acquireOptions">
+        <Pattern ignoreCase="true">{acquireOptions}</Pattern>
+    </FormParam>
+    <FormParam name="paymentOptions">
+        <Pattern ignoreCase="true">{paymentOptions}</Pattern>
+    </FormParam>
+    <FormParam name="delivery_salutation">
+        <Pattern ignoreCase="true">{delivery_salutation}</Pattern>
+    </FormParam>
+    <FormParam name="delivery_personal">
+        <Pattern ignoreCase="true">{delivery_personal}</Pattern>
+    </FormParam>
+    <FormParam name="delivery_firstName">
+        <Pattern ignoreCase="true">{delivery_firstName}</Pattern>
+    </FormParam>
+    <FormParam name="delivery_lastName">
+        <Pattern ignoreCase="true">{delivery_lastName}</Pattern>
+    </FormParam>
+    <FormParam name="delivery_suffix_1">
+        <Pattern ignoreCase="true">{delivery_suffix_1}</Pattern>
+    </FormParam>
+    <FormParam name="delivery_suffix_2">
+        <Pattern ignoreCase="true">{delivery_suffix_2}</Pattern>
+    </FormParam>
+    <FormParam name="delivery_companyName">
+        <Pattern ignoreCase="true">{delivery_companyName}</Pattern>
+    </FormParam>
+    <FormParam name="delivery_street">
+        <Pattern ignoreCase="true">{delivery_street}</Pattern>
+    </FormParam>
+    <FormParam name="delivery_zipCode">
+        <Pattern ignoreCase="true">{delivery_zipCode}</Pattern>
+    </FormParam>
+    <FormParam name="delivery_city">
+        <Pattern ignoreCase="true">{delivery_city}</Pattern>
+    </FormParam>
+    <FormParam name="delivery_country">
+        <Pattern ignoreCase="true">{delivery_country}</Pattern>
+    </FormParam>
+    <FormParam name="birthDate">
+        <Pattern ignoreCase="true">{birthDate}</Pattern>
+    </FormParam>
+    <FormParam name="sinceDate">
+        <Pattern ignoreCase="true">{sinceDate}</Pattern>
+    </FormParam>
+    <FormParam name="sepaAgreement">
+        <Pattern ignoreCase="true">{sepaAgreement}</Pattern>
+    </FormParam>
+    <FormParam name="sepaDate">
+        <Pattern ignoreCase="true">{sepaDate}</Pattern>
+    </FormParam>
+    <FormParam name="sepaInfo">
+        <Pattern ignoreCase="true">{sepaInfo}</Pattern>
+    </FormParam>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</ExtractVariables>

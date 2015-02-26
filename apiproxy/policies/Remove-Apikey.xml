@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="Remove-Apikey">
+    <DisplayName>Remove Apikey</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <Remove>
+        <QueryParams>
+            <QueryParam name="apikey"/>
+        </QueryParams>
+       </Remove>
+    <AssignVariable>
+        <Name>userkey</Name>
+      <Ref>verifyapikey.Verify-API-Key.userkey</Ref>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

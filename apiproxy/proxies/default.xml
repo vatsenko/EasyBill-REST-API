@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description>SOAP proxy generated from soap.easybill.wsdl, soap.commons.xsd, soap.companyposition.xsd, soap.customer.xsd, soap.document.xsd</Description>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <FaultRules/>
+                <Name>Verify-API-Key</Name>
+            </Step>
+            <Step>
+                <FaultRules/>
+                <Name>Remove-Apikey</Name>
+            </Step>
+            <Step>
+                <Name>save-message</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <Flows>
+        <Flow name="getCustomer">
+            <Description>getCustomer</Description>
+            <Request>
+                <Step>
+                    <FaultRules/>
+                    <Name>getCustomers-extract-URI-param</Name>
+                </Step>
+                <Step>
+                    <Name>getCustomer-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;/customer/{id}&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+        </Flow>
+        <Flow name="getCustomerByCustomerNumber">
+            <Description>getCustomerByCustomerNumber</Description>
+            <Request>
+                <Step>
+                    <Name>getCustomerByCustomerNumber-extract-query-param</Name>
+                </Step>
+                <Step>
+                    <Name>getCustomerByCustomerNumber-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;&#x2F;customerbycustomernumber&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+        </Flow>
+        <Flow name="createCustomer">
+            <Description/>
+            <Request>
+                <Step>
+                    <FaultRules/>
+                    <Name>createCustomer-extract-form-param</Name>
+                </Step>
+                <Step>
+                    <FaultRules/>
+                    <Name>createCustomer-Build-SOAP</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;/customer&quot;) and (request.verb = &quot;POST&quot;)</Condition>
+        </Flow>
+        <Flow name="setCustomer">
+            <Description>setCustomer</Description>
+            <Request>
+                <Step>
+                    <Name>setCustomer-extract-form-param</Name>
+                </Step>
+                <Step>
+                    <Name>setCustomer-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;/customer/{id}&quot;) and (request.verb = &quot;PUT&quot;)</Condition>
+        </Flow>
+        <Flow name="searchCustomers">
+            <Description>searchCustomers</Description>
+            <Request>
+                <Step>
+                    <Name>searchCustomers-extract-query-param</Name>
+                </Step>
+                <Step>
+                    <Name>searchCustomers-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;/searchcustomers&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+        </Flow>
+        <Flow name="deleteCustomer">
+            <Description>deleteCustomer</Description>
+            <Request>
+                <Step>
+                    <FaultRules/>
+                    <Name>getCustomers-extract-URI-param</Name>
+                </Step>
+                <Step>
+                    <Name>deleteCustomer-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;/customer/{id}&quot;) and (request.verb = &quot;DELETE&quot;)</Condition>
+        </Flow>
+        <Flow name="getCustomerGroup">
+            <Description>getCustomerGroup</Description>
+            <Request>
+                <Step>
+                    <Name>getCustomerGroup-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;&#x2F;customergroup&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+        </Flow>
+        <Flow name="setCustomerGroup">
+            <Description>setCustomerGroup</Description>
+            <Request>
+                <Step>
+                    <Name>setCustomerGroup-extract-form-param</Name>
+                </Step>
+                <Step>
+                    <Name>setCustomerGroup-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;&#x2F;customergroup&quot;) and (request.verb = &quot;PUT&quot;)</Condition>
+        </Flow>
+        <Flow name="getAllCustomerGroups">
+            <Description>getAllCustomerGroups</Description>
+            <Request>
+                <Step>
+                    <Name>getAllCustomerGroups-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;&#x2F;allcustomergroups&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+        </Flow>
+        <Flow name="getCompanyPosition">
+            <Description>getCompanyPosition</Description>
+            <Request>
+                <Step>
+                    <Name>getCompanyPosition-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;&#x2F;companyposition&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+        </Flow>
+        <Flow name="setCompanyPosition">
+            <Description>setCompanyPosition</Description>
+            <Request>
+                <Step>
+                    <Name>setCompanyPosition-extract-form-param</Name>
+                </Step>
+                <Step>
+                    <Name>setCompanyPosition-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;&#x2F;companyposition&quot;) and (request.verb = &quot;PUT&quot;)</Condition>
+        </Flow>
+        <Flow name="searchCompanyPositions">
+            <Description>searchCompanyPositions</Description>
+            <Request>
+                <Step>
+                    <Name>searchCompanyPositions-extract-query-param</Name>
+                </Step>
+                <Step>
+                    <Name>searchCompanyPositions-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;&#x2F;searchcompanypositions&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+        </Flow>
+        <Flow name="getCompanyPositionGroup">
+            <Description>getCompanyPositionGroup</Description>
+            <Request>
+                <Step>
+                    <Name>getCompanyPositionGroup-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;&#x2F;companypositiongroup&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+        </Flow>
+        <Flow name="setCompanyPositionGroup">
+            <Description>setCompanyPositionGroup</Description>
+            <Request>
+                <Step>
+                    <Name>setCompanyPositionGroup-extract-form-param</Name>
+                </Step>
+                <Step>
+                    <Name>setCompanyPositionGroup-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;&#x2F;companypositiongroup&quot;) and (request.verb = &quot;PUT&quot;)</Condition>
+        </Flow>
+        <Flow name="getAllCompanyPositionGroups">
+            <Description>getAllCompanyPositionGroups</Description>
+            <Request>
+                <Step>
+                    <Name>getAllCompanyPositionGroups-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;&#x2F;allcompanypositiongroups&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+        </Flow>
+        <Flow name="createDocument">
+            <Description>createDocument</Description>
+            <Request>
+                <Step>
+                    <Name>createDocument-extract-form-param</Name>
+                </Step>
+                <Step>
+                    <Name>createDocument-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;&#x2F;document&quot;) and (request.verb = &quot;POST&quot;)</Condition>
+        </Flow>
+        <Flow name="createReminder">
+            <Description>createReminder</Description>
+            <Request>
+                <Step>
+                    <Name>createReminder-extract-form-param</Name>
+                </Step>
+                <Step>
+                    <Name>createReminder-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;&#x2F;reminder&quot;) and (request.verb = &quot;POST&quot;)</Condition>
+        </Flow>
+        <Flow name="createDunning">
+            <Description>createDunning</Description>
+            <Request>
+                <Step>
+                    <Name>createDunning-extract-form-param</Name>
+                </Step>
+                <Step>
+                    <Name>createDunning-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;&#x2F;dunning&quot;) and (request.verb = &quot;POST&quot;)</Condition>
+        </Flow>
+        <Flow name="getDocuments">
+            <Description>getDocuments</Description>
+            <Request>
+                <Step>
+                    <Name>getDocuments-extract-query-param</Name>
+                </Step>
+                <Step>
+                    <Name>getDocuments-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;&#x2F;documents&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+        </Flow>
+        <Flow name="findDocumentsByDocumentNumber">
+            <Description>findDocumentsByDocumentNumber</Description>
+            <Request>
+                <Step>
+                    <Name>findDocumentsByDocumentNumber-extract-query-param</Name>
+                </Step>
+                <Step>
+                    <Name>findDocumentsByDocumentNumber-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;&#x2F;finddocumentsbydocumentnumber&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+        </Flow>
+        <Flow name="getDocument">
+            <Description>getDocument</Description>
+            <Request>
+                <Step>
+                    <Name>getDocument-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;&#x2F;document&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+        </Flow>
+        <Flow name="getDocumentPDF">
+            <Description>getDocumentPDF</Description>
+            <Request>
+                <Step>
+                    <Name>getDocumentPDF-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;&#x2F;documentpdf&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+        </Flow>
+        <Flow name="toCancelDocument">
+            <Description>toCancelDocument</Description>
+            <Request>
+                <Step>
+                    <Name>toCancelDocument-extract-query-param</Name>
+                </Step>
+                <Step>
+                    <Name>toCancelDocument-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;&#x2F;tocanceldocument&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+        </Flow>
+        <Flow name="toCreditDocument">
+            <Description>toCreditDocument</Description>
+            <Request>
+                <Step>
+                    <Name>toCreditDocument-extract-query-param</Name>
+                </Step>
+                <Step>
+                    <Name>toCreditDocument-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;&#x2F;tocreditdocument&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+        </Flow>
+        <Flow name="addDocumentPayment">
+            <Description>addDocumentPayment</Description>
+            <Request>
+                <Step>
+                    <Name>addDocumentPayment-extract-form-param</Name>
+                </Step>
+                <Step>
+                    <Name>addDocumentPayment-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;&#x2F;documentpayment&quot;) and (request.verb = &quot;POST&quot;)</Condition>
+        </Flow>
+        <Flow name="getDocumentPayments">
+            <Description>getDocumentPayments</Description>
+            <Request>
+                <Step>
+                    <Name>getDocumentPayments-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;&#x2F;documentpayments&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+        </Flow>
+        <Flow name="getDocumentSent">
+            <Description>getDocumentSent</Description>
+            <Request>
+                <Step>
+                    <Name>getDocumentSent-build-soap</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath &quot;&#x2F;documentsent&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+        </Flow>
+        <Flow name="unknown-resource">
+            <Description>Unknown Resource</Description>
+            <Request>
+                <Step>
+                    <Name>unknown-resource</Name>
+                </Step>
+            </Request>
+            <Response/>
+        </Flow>
+    </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <HTTPProxyConnection>
+        <BasePath>/v1/soapeasybill</BasePath>
+        <VirtualHost>default</VirtualHost>
+        <VirtualHost>secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>

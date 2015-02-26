@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="true" enabled="true" name="setCompanyPosition-build-soap">
+    <DisplayName>setCompanyPosition Build SOAP</DisplayName>
+    <Add>
+        <Headers>
+            <Header name="SOAPAction">http://www.easybill.de/webservice/customer/SetCompanyPosition</Header>
+        </Headers>
+    </Add>
+    <Set>
+        <Headers>
+            <Header name="Content-Type">text/xml; charset=utf-8</Header>
+        </Headers>
+        <Payload contentType="text/xml">
+            <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <soap:Body>
+                    <SetCompanyPositionRequest xmlns="http://www.easybill.de/webservice/" xmlns:SetCompanyPositionRequest="http://www.easybill.de/webservice/">
+                        <!--Required-->
+                        <positionType>{positionType}</positionType>
+                        <!--Required-->
+                        <itemNumber>{itemNumber}</itemNumber>
+                        <!--Required-->
+                        <itemDescription>{itemDescription}</itemDescription>
+                        <!--Optional-->
+                        <itemNote>{itemNote}</itemNote>
+                        <!--Required-->
+                        <unit>{unit}</unit>
+                        <!--Required-->
+                        <ustPercent>{ustPercent}</ustPercent>
+                        <!--Optional-->
+                        <costPrice>{costPrice}</costPrice>
+                        <!--Required-->
+                        <salePrice>{salePrice}</salePrice>
+                        <!--Optional-->
+                        <salePrice2>{salePrice2}</salePrice2>
+                        <!--Optional-->
+                        <salePrice3>{salePrice3}</salePrice3>
+                        <!--Optional-->
+                        <salePrice4>{salePrice4}</salePrice4>
+                        <!--Optional-->
+                        <salePrice5>{salePrice5}</salePrice5>
+                        <!--Optional-->
+                        <salePrice6>{salePrice6}</salePrice6>
+                        <!--Optional-->
+                        <salePrice7>{salePrice7}</salePrice7>
+                        <!--Optional-->
+                        <salePrice8>{salePrice8}</salePrice8>
+                        <!--Optional-->
+                        <salePrice9>{salePrice9}</salePrice9>
+                        <!--Optional-->
+                        <salePrice10>{salePrice10}</salePrice10>
+                        <!--Required-->
+                        <stock>{stock}</stock>
+                        <!--Optional-->
+                        <exportID>{exportID}</exportID>
+                    </SetCompanyPositionRequest>
+                </soap:Body>
+            </soap:Envelope>
+        </Payload>
+        <Verb>POST</Verb>
+    </Set>
+    <AssignVariable>
+        <Name>forward.target.url</Name>
+        <Value>https://soap2.easybill.de/webservices/webservice4/soap.easybill.php</Value>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

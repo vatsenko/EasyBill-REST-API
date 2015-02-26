@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="true" enabled="true" name="createReminder-extract-form-param">
+    <DisplayName>createReminder Extract Form Param</DisplayName>
+    <FormParam name="textPrefix">
+        <Pattern ignoreCase="true">{textPrefix}</Pattern>
+    </FormParam>
+    <FormParam name="text">
+        <Pattern ignoreCase="true">{text}</Pattern>
+    </FormParam>
+    <FormParam name="contactLabel">
+        <Pattern ignoreCase="true">{contactLabel}</Pattern>
+    </FormParam>
+    <FormParam name="contactText">
+        <Pattern ignoreCase="true">{contactText}</Pattern>
+    </FormParam>
+    <FormParam name="signDocument">
+        <Pattern ignoreCase="true">{signDocument}</Pattern>
+    </FormParam>
+    <FormParam name="sendasemail">
+        <Pattern ignoreCase="true">{sendasemail}</Pattern>
+    </FormParam>
+    <FormParam name="emailSubject">
+        <Pattern ignoreCase="true">{emailSubject}</Pattern>
+    </FormParam>
+    <FormParam name="emailText">
+        <Pattern ignoreCase="true">{emailText}</Pattern>
+    </FormParam>
+    <FormParam name="sendaspost">
+        <Pattern ignoreCase="true">{sendaspost}</Pattern>
+    </FormParam>
+    <FormParam name="sendbyself">
+        <Pattern ignoreCase="true">{sendbyself}</Pattern>
+    </FormParam>
+    <FormParam name="templateName">
+        <Pattern ignoreCase="true">{templateName}</Pattern>
+    </FormParam>
+    <FormParam name="suppressResponsePDF">
+        <Pattern ignoreCase="true">{suppressResponsePDF}</Pattern>
+    </FormParam>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</ExtractVariables>

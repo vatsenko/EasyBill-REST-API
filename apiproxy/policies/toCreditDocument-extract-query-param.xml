@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="true" enabled="true" name="toCreditDocument-extract-query-param">
+    <DisplayName>toCreditDocument Extract Query Param</DisplayName>
+    <QueryParam name="emailSubject">
+        <Pattern ignoreCase="true">{emailSubject}</Pattern>
+    </QueryParam>
+    <QueryParam name="emailText">
+        <Pattern ignoreCase="true">{emailText}</Pattern>
+    </QueryParam>
+    <QueryParam name="sendasemail">
+        <Pattern ignoreCase="true">{sendasemail}</Pattern>
+    </QueryParam>
+    <QueryParam name="sendaspost">
+        <Pattern ignoreCase="true">{sendaspost}</Pattern>
+    </QueryParam>
+    <QueryParam name="sendbyself">
+        <Pattern ignoreCase="true">{sendbyself}</Pattern>
+    </QueryParam>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</ExtractVariables>

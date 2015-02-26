@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="true" enabled="true" name="setCustomerGroup-extract-form-param">
+    <DisplayName>setCustomerGroup Extract Form Param</DisplayName>
+    <FormParam name="number">
+        <Pattern ignoreCase="true">{number}</Pattern>
+    </FormParam>
+    <FormParam name="name">
+        <Pattern ignoreCase="true">{name}</Pattern>
+    </FormParam>
+    <FormParam name="description">
+        <Pattern ignoreCase="true">{description}</Pattern>
+    </FormParam>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</ExtractVariables>

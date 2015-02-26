@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="true" enabled="true" name="setCompanyPosition-extract-form-param">
+    <DisplayName>setCompanyPosition Extract Form Param</DisplayName>
+    <FormParam name="positionType">
+        <Pattern ignoreCase="true">{positionType}</Pattern>
+    </FormParam>
+    <FormParam name="itemNumber">
+        <Pattern ignoreCase="true">{itemNumber}</Pattern>
+    </FormParam>
+    <FormParam name="itemDescription">
+        <Pattern ignoreCase="true">{itemDescription}</Pattern>
+    </FormParam>
+    <FormParam name="itemNote">
+        <Pattern ignoreCase="true">{itemNote}</Pattern>
+    </FormParam>
+    <FormParam name="unit">
+        <Pattern ignoreCase="true">{unit}</Pattern>
+    </FormParam>
+    <FormParam name="ustPercent">
+        <Pattern ignoreCase="true">{ustPercent}</Pattern>
+    </FormParam>
+    <FormParam name="costPrice">
+        <Pattern ignoreCase="true">{costPrice}</Pattern>
+    </FormParam>
+    <FormParam name="salePrice">
+        <Pattern ignoreCase="true">{salePrice}</Pattern>
+    </FormParam>
+    <FormParam name="salePrice2">
+        <Pattern ignoreCase="true">{salePrice2}</Pattern>
+    </FormParam>
+    <FormParam name="salePrice3">
+        <Pattern ignoreCase="true">{salePrice3}</Pattern>
+    </FormParam>
+    <FormParam name="salePrice4">
+        <Pattern ignoreCase="true">{salePrice4}</Pattern>
+    </FormParam>
+    <FormParam name="salePrice5">
+        <Pattern ignoreCase="true">{salePrice5}</Pattern>
+    </FormParam>
+    <FormParam name="salePrice6">
+        <Pattern ignoreCase="true">{salePrice6}</Pattern>
+    </FormParam>
+    <FormParam name="salePrice7">
+        <Pattern ignoreCase="true">{salePrice7}</Pattern>
+    </FormParam>
+    <FormParam name="salePrice8">
+        <Pattern ignoreCase="true">{salePrice8}</Pattern>
+    </FormParam>
+    <FormParam name="salePrice9">
+        <Pattern ignoreCase="true">{salePrice9}</Pattern>
+    </FormParam>
+    <FormParam name="salePrice10">
+        <Pattern ignoreCase="true">{salePrice10}</Pattern>
+    </FormParam>
+    <FormParam name="stock">
+        <Pattern ignoreCase="true">{stock}</Pattern>
+    </FormParam>
+    <FormParam name="exportID">
+        <Pattern ignoreCase="true">{exportID}</Pattern>
+    </FormParam>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</ExtractVariables>

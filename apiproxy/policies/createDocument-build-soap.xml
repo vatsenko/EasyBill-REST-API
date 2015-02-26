@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="true" enabled="true" name="createDocument-build-soap">
+    <DisplayName>createDocument Build SOAP</DisplayName>
+    <Add>
+        <Headers>
+            <Header name="SOAPAction">http://www.easybill.de/webservice/documents/createDocument</Header>
+        </Headers>
+    </Add>
+    <Set>
+        <Headers>
+            <Header name="Content-Type">text/xml; charset=utf-8</Header>
+        </Headers>
+        <Payload contentType="text/xml">
+            <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <soap:Body>
+                    <CreateDocumentRequest xmlns="http://www.easybill.de/webservice/" xmlns:CreateDocumentRequest="http://www.easybill.de/webservice/">
+                        <!--Optional-->
+                        <signDocument>{signDocument}</signDocument>
+                        <!--Optional-->
+                        <sendasemail>{sendasemail}</sendasemail>
+                        <!--Optional-->
+                        <emailSubject>{emailSubject}</emailSubject>
+                        <!--Optional-->
+                        <emailText>{emailText}</emailText>
+                        <!--Optional-->
+                        <sendaspost>{sendaspost}</sendaspost>
+                        <!--Optional-->
+                        <sendbyself>{sendbyself}</sendbyself>
+                        <!--Optional-->
+                        <templateName>{templateName}</templateName>
+                        <!--Optional-->
+                        <templateTextTakeOver>{templateTextTakeOver}</templateTextTakeOver>
+                        <!--Optional-->
+                        <suppressResponsePDF>{suppressResponsePDF}</suppressResponsePDF>
+                    </CreateDocumentRequest>
+                </soap:Body>
+            </soap:Envelope>
+        </Payload>
+        <Verb>POST</Verb>
+    </Set>
+    <AssignVariable>
+        <Name>forward.target.url</Name>
+        <Value>https://soap2.easybill.de/webservices/webservice4/soap.easybill.php</Value>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

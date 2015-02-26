@@ -1,0 +1,1706 @@
+{
+	"apiProxyName": "soapeasybill",
+	"apiProxyType": "REST",
+	"targetNamespace": "http://www.easybill.de/webservice/",
+	"resources": [
+		{
+			"name": "getCustomer",
+			"documentationContent": "Gibt den Kunden mit der ID zurück",
+			"method": "GET",
+			"path": "/customer",
+			"inputList": [],
+			"soapPayload": "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n    <soap:Body>\n        <getCustomer xmlns=\"http://www.easybill.de/webservice/\" xmlns:getCustomer=\"http://www.easybill.de/webservice/\">\n        </getCustomer>\n    </soap:Body>\n</soap:Envelope>"
+		},
+		{
+			"name": "getCustomerByCustomerNumber",
+			"documentationContent": "Gibt den Kunden mit der Kundennummer zurück",
+			"method": "GET",
+			"path": "/customerbycustomernumber",
+			"inputList": [
+				{
+					"name": "customerNumber",
+					"type": "string",
+					"minOccurs": "1",
+					"maxOccurs": "1",
+					"enumValues": ""
+				}
+			],
+			"soapPayload": "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n    <soap:Body>\n        <GetCustomerByCustomerNumberRequest xmlns=\"http://www.easybill.de/webservice/\" xmlns:GetCustomerByCustomerNumberRequest=\"http://www.easybill.de/webservice/\">\n            <!--Required-->\n            <customerNumber>{customerNumber}</customerNumber>\n        </GetCustomerByCustomerNumberRequest>\n    </soap:Body>\n</soap:Envelope>"
+		},
+		{
+			"name": "setCustomer",
+			"documentationContent": "Bearbeiten eines Kunden.\n\t\t\tAnlegen geschieht automatisch, falls die CustomerID null ist.",
+			"method": "PUT",
+			"path": "/customer",
+			"inputList": [
+				{
+					"name": "customerNumber",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "salutation",
+					"type": "integer",
+					"minOccurs": "1",
+					"maxOccurs": "1",
+					"enumValues": [
+						"0",
+						"1",
+						"2",
+						"3",
+						"4",
+						"5",
+						"6"
+					]
+				},
+				{
+					"name": "personal",
+					"type": "integer",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": [
+						"0",
+						"1"
+					]
+				},
+				{
+					"name": "title",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "firstName",
+					"type": "string",
+					"minOccurs": "1",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "lastName",
+					"type": "string",
+					"minOccurs": "1",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "suffix_1",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "suffix_2",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "companyName",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "street",
+					"type": "string",
+					"minOccurs": "1",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "zipCode",
+					"type": "string",
+					"minOccurs": "1",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "city",
+					"type": "string",
+					"minOccurs": "1",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "country",
+					"type": "string",
+					"minOccurs": "1",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "postbox",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "postboxZipCode",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "postboxCity",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "postboxCountry",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "phone_1",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "phone_2",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "fax",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "mobile",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "email",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "internet",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "info_1",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "info_2",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "note",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "taxNumber",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "ustid",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "taxOptions",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": [
+						"nStb",
+						"nStbUstID",
+						"nStbNoneUstID",
+						"revc",
+						"IG",
+						"AL",
+						"sStfr"
+					]
+				},
+				{
+					"name": "cashAllowance",
+					"type": "float",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "cashDiscount",
+					"type": "float",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "cashDiscountType",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": [
+						"PERCENT",
+						"AMOUNT"
+					]
+				},
+				{
+					"name": "salePriceLevel",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": [
+						"SALEPRICE2",
+						"SALEPRICE3",
+						"SALEPRICE4",
+						"SALEPRICE5"
+					]
+				},
+				{
+					"name": "bankAccountOwner_1",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "bankName_1",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "bankCode_1",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "bankAccount_1",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "bankBIC_1",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "bankIBAN_1",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "acquireOptions",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": [
+						"1",
+						"2",
+						"3",
+						"4"
+					]
+				},
+				{
+					"name": "paymentOptions",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": [
+						"1",
+						"2",
+						"3",
+						"5"
+					]
+				},
+				{
+					"name": "delivery_salutation",
+					"type": "integer",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": [
+						"0",
+						"1",
+						"2",
+						"3",
+						"4",
+						"5",
+						"6"
+					]
+				},
+				{
+					"name": "delivery_personal",
+					"type": "integer",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": [
+						"0",
+						"1"
+					]
+				},
+				{
+					"name": "delivery_firstName",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "delivery_lastName",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "delivery_suffix_1",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "delivery_suffix_2",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "delivery_companyName",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "delivery_street",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "delivery_zipCode",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "delivery_city",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "delivery_country",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "birthDate",
+					"type": "date",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "sinceDate",
+					"type": "date",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "sepaAgreement",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": [
+						"BASIC",
+						"COMPANY",
+						"COR1"
+					]
+				},
+				{
+					"name": "sepaDate",
+					"type": "date",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "sepaInfo",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				}
+			],
+			"soapPayload": "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n    <soap:Body>\n        <SetCustomerRequest xmlns=\"http://www.easybill.de/webservice/\" xmlns:SetCustomerRequest=\"http://www.easybill.de/webservice/\">\n            <!--Optional-->\n            <customerNumber>{customerNumber}</customerNumber>\n            <!--Required-->\n            <salutation>{salutation}</salutation>\n            <!--Optional-->\n            <personal>{personal}</personal>\n            <!--Optional-->\n            <title>{title}</title>\n            <!--Required-->\n            <firstName>{firstName}</firstName>\n            <!--Required-->\n            <lastName>{lastName}</lastName>\n            <!--Optional-->\n            <suffix_1>{suffix_1}</suffix_1>\n            <!--Optional-->\n            <suffix_2>{suffix_2}</suffix_2>\n            <!--Optional-->\n            <companyName>{companyName}</companyName>\n            <!--Required-->\n            <street>{street}</street>\n            <!--Required-->\n            <zipCode>{zipCode}</zipCode>\n            <!--Required-->\n            <city>{city}</city>\n            <!--Required-->\n            <country>{country}</country>\n            <!--Optional-->\n            <postbox>{postbox}</postbox>\n            <!--Optional-->\n            <postboxZipCode>{postboxZipCode}</postboxZipCode>\n            <!--Optional-->\n            <postboxCity>{postboxCity}</postboxCity>\n            <!--Optional-->\n            <postboxCountry>{postboxCountry}</postboxCountry>\n            <!--Optional-->\n            <phone_1>{phone_1}</phone_1>\n            <!--Optional-->\n            <phone_2>{phone_2}</phone_2>\n            <!--Optional-->\n            <fax>{fax}</fax>\n            <!--Optional-->\n            <mobile>{mobile}</mobile>\n            <!--Optional-->\n            <email>{email}</email>\n            <!--Optional-->\n            <internet>{internet}</internet>\n            <!--Optional-->\n            <info_1>{info_1}</info_1>\n            <!--Optional-->\n            <info_2>{info_2}</info_2>\n            <!--Optional-->\n            <note>{note}</note>\n            <!--Optional-->\n            <taxNumber>{taxNumber}</taxNumber>\n            <!--Optional-->\n            <ustid>{ustid}</ustid>\n            <!--Optional-->\n            <taxOptions>{taxOptions}</taxOptions>\n            <!--Optional-->\n            <cashAllowance>{cashAllowance}</cashAllowance>\n            <!--Optional-->\n            <cashDiscount>{cashDiscount}</cashDiscount>\n            <!--Optional-->\n            <cashDiscountType>{cashDiscountType}</cashDiscountType>\n            <!--Optional-->\n            <salePriceLevel>{salePriceLevel}</salePriceLevel>\n            <!--Optional-->\n            <bankAccountOwner_1>{bankAccountOwner_1}</bankAccountOwner_1>\n            <!--Optional-->\n            <bankName_1>{bankName_1}</bankName_1>\n            <!--Optional-->\n            <bankCode_1>{bankCode_1}</bankCode_1>\n            <!--Optional-->\n            <bankAccount_1>{bankAccount_1}</bankAccount_1>\n            <!--Optional-->\n            <bankBIC_1>{bankBIC_1}</bankBIC_1>\n            <!--Optional-->\n            <bankIBAN_1>{bankIBAN_1}</bankIBAN_1>\n            <!--Optional-->\n            <acquireOptions>{acquireOptions}</acquireOptions>\n            <!--Optional-->\n            <paymentOptions>{paymentOptions}</paymentOptions>\n            <!--Optional-->\n            <delivery_salutation>{delivery_salutation}</delivery_salutation>\n            <!--Optional-->\n            <delivery_personal>{delivery_personal}</delivery_personal>\n            <!--Optional-->\n            <delivery_firstName>{delivery_firstName}</delivery_firstName>\n            <!--Optional-->\n            <delivery_lastName>{delivery_lastName}</delivery_lastName>\n            <!--Optional-->\n            <delivery_suffix_1>{delivery_suffix_1}</delivery_suffix_1>\n            <!--Optional-->\n            <delivery_suffix_2>{delivery_suffix_2}</delivery_suffix_2>\n            <!--Optional-->\n            <delivery_companyName>{delivery_companyName}</delivery_companyName>\n            <!--Optional-->\n            <delivery_street>{delivery_street}</delivery_street>\n            <!--Optional-->\n            <delivery_zipCode>{delivery_zipCode}</delivery_zipCode>\n            <!--Optional-->\n            <delivery_city>{delivery_city}</delivery_city>\n            <!--Optional-->\n            <delivery_country>{delivery_country}</delivery_country>\n            <!--Optional-->\n            <birthDate>{birthDate}</birthDate>\n            <!--Optional-->\n            <sinceDate>{sinceDate}</sinceDate>\n            <!--Optional-->\n            <sepaAgreement>{sepaAgreement}</sepaAgreement>\n            <!--Optional-->\n            <sepaDate>{sepaDate}</sepaDate>\n            <!--Optional-->\n            <sepaInfo>{sepaInfo}</sepaInfo>\n        </SetCustomerRequest>\n    </soap:Body>\n</soap:Envelope>"
+		},
+		{
+			"name": "createCustomer",
+			"documentationContent": "Anlegen oder Bearbeiten eines Kunden.\n\t\t\tAnlegen geschieht automatisch, falls die CustomerID null ist.",
+			"method": "POST",
+			"path": "/customer",
+			"inputList": [
+				{
+					"name": "customerNumber",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "salutation",
+					"type": "integer",
+					"minOccurs": "1",
+					"maxOccurs": "1",
+					"enumValues": [
+						"0",
+						"1",
+						"2",
+						"3",
+						"4",
+						"5",
+						"6"
+					]
+				},
+				{
+					"name": "personal",
+					"type": "integer",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": [
+						"0",
+						"1"
+					]
+				},
+				{
+					"name": "title",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "firstName",
+					"type": "string",
+					"minOccurs": "1",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "lastName",
+					"type": "string",
+					"minOccurs": "1",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "suffix_1",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "suffix_2",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "companyName",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "street",
+					"type": "string",
+					"minOccurs": "1",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "zipCode",
+					"type": "string",
+					"minOccurs": "1",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "city",
+					"type": "string",
+					"minOccurs": "1",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "country",
+					"type": "string",
+					"minOccurs": "1",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "postbox",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "postboxZipCode",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "postboxCity",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "postboxCountry",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "phone_1",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "phone_2",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "fax",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "mobile",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "email",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "internet",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "info_1",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "info_2",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "note",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "taxNumber",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "ustid",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "taxOptions",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": [
+						"nStb",
+						"nStbUstID",
+						"nStbNoneUstID",
+						"revc",
+						"IG",
+						"AL",
+						"sStfr"
+					]
+				},
+				{
+					"name": "cashAllowance",
+					"type": "float",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "cashDiscount",
+					"type": "float",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "cashDiscountType",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": [
+						"PERCENT",
+						"AMOUNT"
+					]
+				},
+				{
+					"name": "salePriceLevel",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": [
+						"SALEPRICE2",
+						"SALEPRICE3",
+						"SALEPRICE4",
+						"SALEPRICE5"
+					]
+				},
+				{
+					"name": "bankAccountOwner_1",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "bankName_1",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "bankCode_1",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "bankAccount_1",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "bankBIC_1",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "bankIBAN_1",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "acquireOptions",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": [
+						"1",
+						"2",
+						"3",
+						"4"
+					]
+				},
+				{
+					"name": "paymentOptions",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": [
+						"1",
+						"2",
+						"3",
+						"5"
+					]
+				},
+				{
+					"name": "delivery_salutation",
+					"type": "integer",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": [
+						"0",
+						"1",
+						"2",
+						"3",
+						"4",
+						"5",
+						"6"
+					]
+				},
+				{
+					"name": "delivery_personal",
+					"type": "integer",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": [
+						"0",
+						"1"
+					]
+				},
+				{
+					"name": "delivery_firstName",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "delivery_lastName",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "delivery_suffix_1",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "delivery_suffix_2",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "delivery_companyName",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "delivery_street",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "delivery_zipCode",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "delivery_city",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "delivery_country",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "birthDate",
+					"type": "date",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "sinceDate",
+					"type": "date",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "sepaAgreement",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": [
+						"BASIC",
+						"COMPANY",
+						"COR1"
+					]
+				},
+				{
+					"name": "sepaDate",
+					"type": "date",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "sepaInfo",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				}
+			],
+			"soapPayload": "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n    <soap:Body>\n        <SetCustomerRequest xmlns=\"http://www.easybill.de/webservice/\" xmlns:SetCustomerRequest=\"http://www.easybill.de/webservice/\">\n            <!--Optional-->\n            <customerNumber>{customerNumber}</customerNumber>\n            <!--Required-->\n            <salutation>{salutation}</salutation>\n            <!--Optional-->\n            <personal>{personal}</personal>\n            <!--Optional-->\n            <title>{title}</title>\n            <!--Required-->\n            <firstName>{firstName}</firstName>\n            <!--Required-->\n            <lastName>{lastName}</lastName>\n            <!--Optional-->\n            <suffix_1>{suffix_1}</suffix_1>\n            <!--Optional-->\n            <suffix_2>{suffix_2}</suffix_2>\n            <!--Optional-->\n            <companyName>{companyName}</companyName>\n            <!--Required-->\n            <street>{street}</street>\n            <!--Required-->\n            <zipCode>{zipCode}</zipCode>\n            <!--Required-->\n            <city>{city}</city>\n            <!--Required-->\n            <country>{country}</country>\n            <!--Optional-->\n            <postbox>{postbox}</postbox>\n            <!--Optional-->\n            <postboxZipCode>{postboxZipCode}</postboxZipCode>\n            <!--Optional-->\n            <postboxCity>{postboxCity}</postboxCity>\n            <!--Optional-->\n            <postboxCountry>{postboxCountry}</postboxCountry>\n            <!--Optional-->\n            <phone_1>{phone_1}</phone_1>\n            <!--Optional-->\n            <phone_2>{phone_2}</phone_2>\n            <!--Optional-->\n            <fax>{fax}</fax>\n            <!--Optional-->\n            <mobile>{mobile}</mobile>\n            <!--Optional-->\n            <email>{email}</email>\n            <!--Optional-->\n            <internet>{internet}</internet>\n            <!--Optional-->\n            <info_1>{info_1}</info_1>\n            <!--Optional-->\n            <info_2>{info_2}</info_2>\n            <!--Optional-->\n            <note>{note}</note>\n            <!--Optional-->\n            <taxNumber>{taxNumber}</taxNumber>\n            <!--Optional-->\n            <ustid>{ustid}</ustid>\n            <!--Optional-->\n            <taxOptions>{taxOptions}</taxOptions>\n            <!--Optional-->\n            <cashAllowance>{cashAllowance}</cashAllowance>\n            <!--Optional-->\n            <cashDiscount>{cashDiscount}</cashDiscount>\n            <!--Optional-->\n            <cashDiscountType>{cashDiscountType}</cashDiscountType>\n            <!--Optional-->\n            <salePriceLevel>{salePriceLevel}</salePriceLevel>\n            <!--Optional-->\n            <bankAccountOwner_1>{bankAccountOwner_1}</bankAccountOwner_1>\n            <!--Optional-->\n            <bankName_1>{bankName_1}</bankName_1>\n            <!--Optional-->\n            <bankCode_1>{bankCode_1}</bankCode_1>\n            <!--Optional-->\n            <bankAccount_1>{bankAccount_1}</bankAccount_1>\n            <!--Optional-->\n            <bankBIC_1>{bankBIC_1}</bankBIC_1>\n            <!--Optional-->\n            <bankIBAN_1>{bankIBAN_1}</bankIBAN_1>\n            <!--Optional-->\n            <acquireOptions>{acquireOptions}</acquireOptions>\n            <!--Optional-->\n            <paymentOptions>{paymentOptions}</paymentOptions>\n            <!--Optional-->\n            <delivery_salutation>{delivery_salutation}</delivery_salutation>\n            <!--Optional-->\n            <delivery_personal>{delivery_personal}</delivery_personal>\n            <!--Optional-->\n            <delivery_firstName>{delivery_firstName}</delivery_firstName>\n            <!--Optional-->\n            <delivery_lastName>{delivery_lastName}</delivery_lastName>\n            <!--Optional-->\n            <delivery_suffix_1>{delivery_suffix_1}</delivery_suffix_1>\n            <!--Optional-->\n            <delivery_suffix_2>{delivery_suffix_2}</delivery_suffix_2>\n            <!--Optional-->\n            <delivery_companyName>{delivery_companyName}</delivery_companyName>\n            <!--Optional-->\n            <delivery_street>{delivery_street}</delivery_street>\n            <!--Optional-->\n            <delivery_zipCode>{delivery_zipCode}</delivery_zipCode>\n            <!--Optional-->\n            <delivery_city>{delivery_city}</delivery_city>\n            <!--Optional-->\n            <delivery_country>{delivery_country}</delivery_country>\n            <!--Optional-->\n            <birthDate>{birthDate}</birthDate>\n            <!--Optional-->\n            <sinceDate>{sinceDate}</sinceDate>\n            <!--Optional-->\n            <sepaAgreement>{sepaAgreement}</sepaAgreement>\n            <!--Optional-->\n            <sepaDate>{sepaDate}</sepaDate>\n            <!--Optional-->\n            <sepaInfo>{sepaInfo}</sepaInfo>\n        </SetCustomerRequest>\n    </soap:Body>\n</soap:Envelope>"
+		},
+		{
+			"name": "searchCustomers",
+			"documentationContent": "Suche alle Kunden, eingeschränkt auf den Suchstring",
+			"method": "GET",
+			"path": "/searchcustomers",
+			"inputList": [
+				{
+					"name": "searchInfo",
+					"type": "string",
+					"minOccurs": "1",
+					"maxOccurs": "1",
+					"enumValues": ""
+				}
+			],
+			"soapPayload": "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n    <soap:Body>\n        <SearchCustomersRequest xmlns=\"http://www.easybill.de/webservice/\" xmlns:SearchCustomersRequest=\"http://www.easybill.de/webservice/\">\n            <!--Required-->\n            <searchInfo>{searchInfo}</searchInfo>\n        </SearchCustomersRequest>\n    </soap:Body>\n</soap:Envelope>"
+		},
+		{
+			"name": "deleteCustomer",
+			"documentationContent": "Löscht den Kunden mit der Kunden-ID",
+			"method": "DELETE",
+			"path": "/customer",
+			"inputList": [],
+			"soapPayload": "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n    <soap:Body>\n        <deleteCustomer xmlns=\"http://www.easybill.de/webservice/\" xmlns:deleteCustomer=\"http://www.easybill.de/webservice/\">\n        </deleteCustomer>\n    </soap:Body>\n</soap:Envelope>"
+		},
+		{
+			"name": "getCustomerGroup",
+			"documentationContent": "Gibt eine Kundengruppe zurück",
+			"method": "GET",
+			"path": "/customergroup",
+			"inputList": [],
+			"soapPayload": "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n    <soap:Body>\n        <getCustomerGroup xmlns=\"http://www.easybill.de/webservice/\" xmlns:getCustomerGroup=\"http://www.easybill.de/webservice/\">\n        </getCustomerGroup>\n    </soap:Body>\n</soap:Envelope>"
+		},
+		{
+			"name": "setCustomerGroup",
+			"documentationContent": "Erstellt oder bearbeitet einen Kundengruppe.\n\t\t\tErstellen geschieht automatisch, falls customergroupid null ist.",
+			"method": "PUT",
+			"path": "/customergroup",
+			"inputList": [
+				{
+					"name": "number",
+					"type": "string",
+					"minOccurs": "1",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "name",
+					"type": "string",
+					"minOccurs": "1",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "description",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				}
+			],
+			"soapPayload": "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n    <soap:Body>\n        <SetCustomerGroupRequest xmlns=\"http://www.easybill.de/webservice/\" xmlns:SetCustomerGroupRequest=\"http://www.easybill.de/webservice/\">\n            <!--Required-->\n            <number>{number}</number>\n            <!--Required-->\n            <name>{name}</name>\n            <!--Optional-->\n            <description>{description}</description>\n        </SetCustomerGroupRequest>\n    </soap:Body>\n</soap:Envelope>"
+		},
+		{
+			"name": "getAllCustomerGroups",
+			"documentationContent": "Gibt alle gespeicherten Kundengruppen zurück",
+			"method": "GET",
+			"path": "/allcustomergroups",
+			"inputList": [],
+			"soapPayload": "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n    <soap:Body>\n        <getAllCustomerGroups xmlns=\"http://www.easybill.de/webservice/\" xmlns:getAllCustomerGroups=\"http://www.easybill.de/webservice/\">\n        </getAllCustomerGroups>\n    </soap:Body>\n</soap:Envelope>"
+		},
+		{
+			"name": "getCompanyPosition",
+			"documentationContent": "Gibt den Rechnungsposten zurück",
+			"method": "GET",
+			"path": "/companyposition",
+			"inputList": [],
+			"soapPayload": "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n    <soap:Body>\n        <getCompanyPosition xmlns=\"http://www.easybill.de/webservice/\" xmlns:getCompanyPosition=\"http://www.easybill.de/webservice/\">\n        </getCompanyPosition>\n    </soap:Body>\n</soap:Envelope>"
+		},
+		{
+			"name": "setCompanyPosition",
+			"documentationContent": "Erstellt oder bearbeitet Rechnungsposten.\n\t\t\tErstellen geschieht automatisch, falls companypositionid null ist.",
+			"method": "PUT",
+			"path": "/companyposition",
+			"inputList": [
+				{
+					"name": "positionType",
+					"type": "string",
+					"minOccurs": "1",
+					"maxOccurs": "1",
+					"enumValues": [
+						"SERVICE",
+						"PRODUCT"
+					]
+				},
+				{
+					"name": "itemNumber",
+					"type": "string",
+					"minOccurs": "1",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "itemDescription",
+					"type": "string",
+					"minOccurs": "1",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "itemNote",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "unit",
+					"type": "string",
+					"minOccurs": "1",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "ustPercent",
+					"type": "string",
+					"minOccurs": "1",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "costPrice",
+					"type": "float",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "salePrice",
+					"type": "float",
+					"minOccurs": "1",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "salePrice2",
+					"type": "float",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "salePrice3",
+					"type": "float",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "salePrice4",
+					"type": "float",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "salePrice5",
+					"type": "float",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "salePrice6",
+					"type": "float",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "salePrice7",
+					"type": "float",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "salePrice8",
+					"type": "float",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "salePrice9",
+					"type": "float",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "salePrice10",
+					"type": "float",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "stock",
+					"type": "string",
+					"minOccurs": "1",
+					"maxOccurs": "1",
+					"enumValues": [
+						"NO",
+						"YES"
+					]
+				},
+				{
+					"name": "exportID",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				}
+			],
+			"soapPayload": "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n    <soap:Body>\n        <SetCompanyPositionRequest xmlns=\"http://www.easybill.de/webservice/\" xmlns:SetCompanyPositionRequest=\"http://www.easybill.de/webservice/\">\n            <!--Required-->\n            <positionType>{positionType}</positionType>\n            <!--Required-->\n            <itemNumber>{itemNumber}</itemNumber>\n            <!--Required-->\n            <itemDescription>{itemDescription}</itemDescription>\n            <!--Optional-->\n            <itemNote>{itemNote}</itemNote>\n            <!--Required-->\n            <unit>{unit}</unit>\n            <!--Required-->\n            <ustPercent>{ustPercent}</ustPercent>\n            <!--Optional-->\n            <costPrice>{costPrice}</costPrice>\n            <!--Required-->\n            <salePrice>{salePrice}</salePrice>\n            <!--Optional-->\n            <salePrice2>{salePrice2}</salePrice2>\n            <!--Optional-->\n            <salePrice3>{salePrice3}</salePrice3>\n            <!--Optional-->\n            <salePrice4>{salePrice4}</salePrice4>\n            <!--Optional-->\n            <salePrice5>{salePrice5}</salePrice5>\n            <!--Optional-->\n            <salePrice6>{salePrice6}</salePrice6>\n            <!--Optional-->\n            <salePrice7>{salePrice7}</salePrice7>\n            <!--Optional-->\n            <salePrice8>{salePrice8}</salePrice8>\n            <!--Optional-->\n            <salePrice9>{salePrice9}</salePrice9>\n            <!--Optional-->\n            <salePrice10>{salePrice10}</salePrice10>\n            <!--Required-->\n            <stock>{stock}</stock>\n            <!--Optional-->\n            <exportID>{exportID}</exportID>\n        </SetCompanyPositionRequest>\n    </soap:Body>\n</soap:Envelope>"
+		},
+		{
+			"name": "searchCompanyPositions",
+			"documentationContent": "Suche eine bestimmte Menge von Rechnungsposten",
+			"method": "GET",
+			"path": "/searchcompanypositions",
+			"inputList": [
+				{
+					"name": "searchInfo",
+					"type": "string",
+					"minOccurs": "1",
+					"maxOccurs": "1",
+					"enumValues": ""
+				}
+			],
+			"soapPayload": "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n    <soap:Body>\n        <SearchCompanyPositionsRequest xmlns=\"http://www.easybill.de/webservice/\" xmlns:SearchCompanyPositionsRequest=\"http://www.easybill.de/webservice/\">\n            <!--Required-->\n            <searchInfo>{searchInfo}</searchInfo>\n        </SearchCompanyPositionsRequest>\n    </soap:Body>\n</soap:Envelope>"
+		},
+		{
+			"name": "getCompanyPositionGroup",
+			"documentationContent": "Gibt die bestimmte Rechnungspostengruppe zurück",
+			"method": "GET",
+			"path": "/companypositiongroup",
+			"inputList": [],
+			"soapPayload": "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n    <soap:Body>\n        <getCompanyPositionGroup xmlns=\"http://www.easybill.de/webservice/\" xmlns:getCompanyPositionGroup=\"http://www.easybill.de/webservice/\">\n        </getCompanyPositionGroup>\n    </soap:Body>\n</soap:Envelope>"
+		},
+		{
+			"name": "setCompanyPositionGroup",
+			"documentationContent": "Erstellt oder bearbeitet einen Rechnungspostengruppe.\n\t\t\tErstellen geschieht automatisch, falls companypositiongroupid null ist.",
+			"method": "PUT",
+			"path": "/companypositiongroup",
+			"inputList": [
+				{
+					"name": "number",
+					"type": "string",
+					"minOccurs": "1",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "name",
+					"type": "string",
+					"minOccurs": "1",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "description",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				}
+			],
+			"soapPayload": "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n    <soap:Body>\n        <SetCompanyPositionGroupRequest xmlns=\"http://www.easybill.de/webservice/\" xmlns:SetCompanyPositionGroupRequest=\"http://www.easybill.de/webservice/\">\n            <!--Required-->\n            <number>{number}</number>\n            <!--Required-->\n            <name>{name}</name>\n            <!--Optional-->\n            <description>{description}</description>\n        </SetCompanyPositionGroupRequest>\n    </soap:Body>\n</soap:Envelope>"
+		},
+		{
+			"name": "getAllCompanyPositionGroups",
+			"documentationContent": "Gibt alle Rechnungspostengruppen zurück",
+			"method": "GET",
+			"path": "/allcompanypositiongroups",
+			"inputList": [],
+			"soapPayload": "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n    <soap:Body>\n        <getAllCompanyPositionGroups xmlns=\"http://www.easybill.de/webservice/\" xmlns:getAllCompanyPositionGroups=\"http://www.easybill.de/webservice/\">\n        </getAllCompanyPositionGroups>\n    </soap:Body>\n</soap:Envelope>"
+		},
+		{
+			"name": "createDocument",
+			"documentationContent": "Erstellt ein Dokument, keine Mahnung",
+			"method": "POST",
+			"path": "/document",
+			"inputList": [
+				{
+					"name": "signDocument",
+					"type": "boolean",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "sendasemail",
+					"type": "boolean",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "emailSubject",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "emailText",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "sendaspost",
+					"type": "boolean",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "sendbyself",
+					"type": "boolean",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "templateName",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "templateTextTakeOver",
+					"type": "boolean",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "suppressResponsePDF",
+					"type": "boolean",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				}
+			],
+			"soapPayload": "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n    <soap:Body>\n        <CreateDocumentRequest xmlns=\"http://www.easybill.de/webservice/\" xmlns:CreateDocumentRequest=\"http://www.easybill.de/webservice/\">\n            <!--Optional-->\n            <signDocument>{signDocument}</signDocument>\n            <!--Optional-->\n            <sendasemail>{sendasemail}</sendasemail>\n            <!--Optional-->\n            <emailSubject>{emailSubject}</emailSubject>\n            <!--Optional-->\n            <emailText>{emailText}</emailText>\n            <!--Optional-->\n            <sendaspost>{sendaspost}</sendaspost>\n            <!--Optional-->\n            <sendbyself>{sendbyself}</sendbyself>\n            <!--Optional-->\n            <templateName>{templateName}</templateName>\n            <!--Optional-->\n            <templateTextTakeOver>{templateTextTakeOver}</templateTextTakeOver>\n            <!--Optional-->\n            <suppressResponsePDF>{suppressResponsePDF}</suppressResponsePDF>\n        </CreateDocumentRequest>\n    </soap:Body>\n</soap:Envelope>"
+		},
+		{
+			"name": "createReminder",
+			"documentationContent": "Erstellt eine Erinnerung",
+			"method": "POST",
+			"path": "/reminder",
+			"inputList": [
+				{
+					"name": "textPrefix",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "text",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "contactLabel",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "contactText",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "signDocument",
+					"type": "boolean",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "sendasemail",
+					"type": "boolean",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "emailSubject",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "emailText",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "sendaspost",
+					"type": "boolean",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "sendbyself",
+					"type": "boolean",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "templateName",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "suppressResponsePDF",
+					"type": "boolean",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				}
+			],
+			"soapPayload": "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n    <soap:Body>\n        <CreateReminderRequest xmlns=\"http://www.easybill.de/webservice/\" xmlns:CreateReminderRequest=\"http://www.easybill.de/webservice/\">\n            <!--Optional-->\n            <textPrefix>{textPrefix}</textPrefix>\n            <!--Optional-->\n            <text>{text}</text>\n            <!--Optional-->\n            <contactLabel>{contactLabel}</contactLabel>\n            <!--Optional-->\n            <contactText>{contactText}</contactText>\n            <!--Optional-->\n            <signDocument>{signDocument}</signDocument>\n            <!--Optional-->\n            <sendasemail>{sendasemail}</sendasemail>\n            <!--Optional-->\n            <emailSubject>{emailSubject}</emailSubject>\n            <!--Optional-->\n            <emailText>{emailText}</emailText>\n            <!--Optional-->\n            <sendaspost>{sendaspost}</sendaspost>\n            <!--Optional-->\n            <sendbyself>{sendbyself}</sendbyself>\n            <!--Optional-->\n            <templateName>{templateName}</templateName>\n            <!--Optional-->\n            <suppressResponsePDF>{suppressResponsePDF}</suppressResponsePDF>\n        </CreateReminderRequest>\n    </soap:Body>\n</soap:Envelope>"
+		},
+		{
+			"name": "createDunning",
+			"documentationContent": "Erstellt eine Mahnung",
+			"method": "POST",
+			"path": "/dunning",
+			"inputList": [
+				{
+					"name": "textPrefix",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "text",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "contactLabel",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "contactText",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "signDocument",
+					"type": "boolean",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "sendasemail",
+					"type": "boolean",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "emailSubject",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "emailText",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "sendaspost",
+					"type": "boolean",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "sendbyself",
+					"type": "boolean",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "templateName",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "suppressResponsePDF",
+					"type": "boolean",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				}
+			],
+			"soapPayload": "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n    <soap:Body>\n        <CreateDunningRequest xmlns=\"http://www.easybill.de/webservice/\" xmlns:CreateDunningRequest=\"http://www.easybill.de/webservice/\">\n            <!--Optional-->\n            <textPrefix>{textPrefix}</textPrefix>\n            <!--Optional-->\n            <text>{text}</text>\n            <!--Optional-->\n            <contactLabel>{contactLabel}</contactLabel>\n            <!--Optional-->\n            <contactText>{contactText}</contactText>\n            <!--Optional-->\n            <signDocument>{signDocument}</signDocument>\n            <!--Optional-->\n            <sendasemail>{sendasemail}</sendasemail>\n            <!--Optional-->\n            <emailSubject>{emailSubject}</emailSubject>\n            <!--Optional-->\n            <emailText>{emailText}</emailText>\n            <!--Optional-->\n            <sendaspost>{sendaspost}</sendaspost>\n            <!--Optional-->\n            <sendbyself>{sendbyself}</sendbyself>\n            <!--Optional-->\n            <templateName>{templateName}</templateName>\n            <!--Optional-->\n            <suppressResponsePDF>{suppressResponsePDF}</suppressResponsePDF>\n        </CreateDunningRequest>\n    </soap:Body>\n</soap:Envelope>"
+		},
+		{
+			"name": "getDocuments",
+			"documentationContent": "Gibt alle Dokumente eines Kunden zurück",
+			"method": "GET",
+			"path": "/documents",
+			"inputList": [
+				{
+					"name": "StatusType",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": [
+						"DUE",
+						"DUE_NOT_PAYED",
+						"PAYED",
+						"OPEN",
+						"OFFERS_OPEN"
+					]
+				},
+				{
+					"name": "Canceled",
+					"type": "boolean",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				}
+			],
+			"soapPayload": "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n    <soap:Body>\n        <GetDocumentsRequest xmlns=\"http://www.easybill.de/webservice/\" xmlns:GetDocumentsRequest=\"http://www.easybill.de/webservice/\">\n            <!--Optional-->\n            <StatusType>{StatusType}</StatusType>\n            <!--Optional-->\n            <Canceled>{Canceled}</Canceled>\n        </GetDocumentsRequest>\n    </soap:Body>\n</soap:Envelope>"
+		},
+		{
+			"name": "findDocumentsByDocumentNumber",
+			"documentationContent": "Gibt alle Dokumente zurück die die gesuchte Dokumentnummer tragen",
+			"method": "GET",
+			"path": "/finddocumentsbydocumentnumber",
+			"inputList": [
+				{
+					"name": "documentNumber",
+					"type": "string",
+					"minOccurs": "1",
+					"maxOccurs": "1",
+					"enumValues": ""
+				}
+			],
+			"soapPayload": "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n    <soap:Body>\n        <FindDocumentsByDocumentNumberRequest xmlns=\"http://www.easybill.de/webservice/\" xmlns:FindDocumentsByDocumentNumberRequest=\"http://www.easybill.de/webservice/\">\n            <!--Required-->\n            <documentNumber>{documentNumber}</documentNumber>\n        </FindDocumentsByDocumentNumberRequest>\n    </soap:Body>\n</soap:Envelope>"
+		},
+		{
+			"name": "getDocument",
+			"documentationContent": "Gibt ein spezielles Dokument zurück",
+			"method": "GET",
+			"path": "/document",
+			"inputList": [],
+			"soapPayload": "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n    <soap:Body>\n        <getDocument xmlns=\"http://www.easybill.de/webservice/\" xmlns:getDocument=\"http://www.easybill.de/webservice/\">\n        </getDocument>\n    </soap:Body>\n</soap:Envelope>"
+		},
+		{
+			"name": "getDocumentPDF",
+			"documentationContent": "Gibt das PDF zu einem Dokument zurück",
+			"method": "GET",
+			"path": "/documentpdf",
+			"inputList": [],
+			"soapPayload": "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n    <soap:Body>\n        <getDocumentPDF xmlns=\"http://www.easybill.de/webservice/\" xmlns:getDocumentPDF=\"http://www.easybill.de/webservice/\">\n        </getDocumentPDF>\n    </soap:Body>\n</soap:Envelope>"
+		},
+		{
+			"name": "toCancelDocument",
+			"documentationContent": "Storniert ein document",
+			"method": "GET",
+			"path": "/tocanceldocument",
+			"inputList": [
+				{
+					"name": "emailSubject",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "emailText",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "sendasemail",
+					"type": "boolean",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "sendaspost",
+					"type": "boolean",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "sendbyself",
+					"type": "boolean",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				}
+			],
+			"soapPayload": "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n    <soap:Body>\n        <ToCancelDocumentRequest xmlns=\"http://www.easybill.de/webservice/\" xmlns:ToCancelDocumentRequest=\"http://www.easybill.de/webservice/\">\n            <!--Optional-->\n            <emailSubject>{emailSubject}</emailSubject>\n            <!--Optional-->\n            <emailText>{emailText}</emailText>\n            <!--Optional-->\n            <sendasemail>{sendasemail}</sendasemail>\n            <!--Optional-->\n            <sendaspost>{sendaspost}</sendaspost>\n            <!--Optional-->\n            <sendbyself>{sendbyself}</sendbyself>\n        </ToCancelDocumentRequest>\n    </soap:Body>\n</soap:Envelope>"
+		},
+		{
+			"name": "toCreditDocument",
+			"documentationContent": "erstellt aus einem Dokument eine Gutschrift",
+			"method": "GET",
+			"path": "/tocreditdocument",
+			"inputList": [
+				{
+					"name": "emailSubject",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "emailText",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "sendasemail",
+					"type": "boolean",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "sendaspost",
+					"type": "boolean",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "sendbyself",
+					"type": "boolean",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				}
+			],
+			"soapPayload": "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n    <soap:Body>\n        <ToCreditDocumentRequest xmlns=\"http://www.easybill.de/webservice/\" xmlns:ToCreditDocumentRequest=\"http://www.easybill.de/webservice/\">\n            <!--Optional-->\n            <emailSubject>{emailSubject}</emailSubject>\n            <!--Optional-->\n            <emailText>{emailText}</emailText>\n            <!--Optional-->\n            <sendasemail>{sendasemail}</sendasemail>\n            <!--Optional-->\n            <sendaspost>{sendaspost}</sendaspost>\n            <!--Optional-->\n            <sendbyself>{sendbyself}</sendbyself>\n        </ToCreditDocumentRequest>\n    </soap:Body>\n</soap:Envelope>"
+		},
+		{
+			"name": "addDocumentPayment",
+			"documentationContent": "Hängt eine neue Zahlung an das Dokument an",
+			"method": "POST",
+			"path": "/documentpayment",
+			"inputList": [
+				{
+					"name": "amount",
+					"type": "float",
+					"minOccurs": "1",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "paymentdate",
+					"type": "date",
+					"minOccurs": "1",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "paymenttype",
+					"type": "string",
+					"minOccurs": "1",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "notice",
+					"type": "string",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				},
+				{
+					"name": "payed",
+					"type": "boolean",
+					"minOccurs": "0",
+					"maxOccurs": "1",
+					"enumValues": ""
+				}
+			],
+			"soapPayload": "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n    <soap:Body>\n        <AddDocumentPaymentRequest xmlns=\"http://www.easybill.de/webservice/\" xmlns:AddDocumentPaymentRequest=\"http://www.easybill.de/webservice/\">\n            <!--Required-->\n            <amount>{amount}</amount>\n            <!--Required-->\n            <paymentdate>{paymentdate}</paymentdate>\n            <!--Required-->\n            <paymenttype>{paymenttype}</paymenttype>\n            <!--Optional-->\n            <notice>{notice}</notice>\n            <!--Optional-->\n            <payed>{payed}</payed>\n        </AddDocumentPaymentRequest>\n    </soap:Body>\n</soap:Envelope>"
+		},
+		{
+			"name": "getDocumentPayments",
+			"documentationContent": "Gibt alle Zahlungen eines Dokuments zurück",
+			"method": "GET",
+			"path": "/documentpayments",
+			"inputList": [],
+			"soapPayload": "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n    <soap:Body>\n        <getDocumentPayments xmlns=\"http://www.easybill.de/webservice/\" xmlns:getDocumentPayments=\"http://www.easybill.de/webservice/\">\n        </getDocumentPayments>\n    </soap:Body>\n</soap:Envelope>"
+		},
+		{
+			"name": "getDocumentSent",
+			"documentationContent": "Gibt alle Versandzeiten eines Dokuments zurück",
+			"method": "GET",
+			"path": "/documentsent",
+			"inputList": [],
+			"soapPayload": "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n    <soap:Body>\n        <getDocumentSent xmlns=\"http://www.easybill.de/webservice/\" xmlns:getDocumentSent=\"http://www.easybill.de/webservice/\">\n        </getDocumentSent>\n    </soap:Body>\n</soap:Envelope>"
+		}
+	]
+}

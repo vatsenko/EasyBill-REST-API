@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="true" enabled="true" name="addDocumentPayment-extract-form-param">
+    <DisplayName>addDocumentPayment Extract Form Param</DisplayName>
+    <FormParam name="amount">
+        <Pattern ignoreCase="true">{amount}</Pattern>
+    </FormParam>
+    <FormParam name="paymentdate">
+        <Pattern ignoreCase="true">{paymentdate}</Pattern>
+    </FormParam>
+    <FormParam name="paymenttype">
+        <Pattern ignoreCase="true">{paymenttype}</Pattern>
+    </FormParam>
+    <FormParam name="notice">
+        <Pattern ignoreCase="true">{notice}</Pattern>
+    </FormParam>
+    <FormParam name="payed">
+        <Pattern ignoreCase="true">{payed}</Pattern>
+    </FormParam>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</ExtractVariables>
